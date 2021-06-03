@@ -1,11 +1,9 @@
 def is_palindrome(word):
-    temp1 = word[0:(len(word) / 2)]
-    temp2 = word[len(word) / 2 + 1 + (len(word) % 2):]
-    print(temp1)
-    print(temp2)
-    for i in range(len(temp1)):
-        print()
+    for i in range(int(len(word)/2)):
+        if word[i] != word[len(word)-i-1]:
+            return False
+    return True
 
 
-print(is_palindrome("racecar"))
+print(is_palindrome("hello"))
 print(int(36 / 3))
