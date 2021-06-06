@@ -16,8 +16,8 @@ def binary_search(element, some_list):
         return mid
     elif some_list[mid] >element:
         return binary_search(element, some_list[0:mid])
-    else: return binary_search(element, some_list[mid+1:])
-
+    else:
+        return binary_search(element, some_list[mid+1:])
 
 
 print(binary_search(2, [2, 3, 5, 7, 11]))
