@@ -26,6 +26,17 @@ def binary_search(element, some_list):
 
 
 def selection_sort(some_list):
+    for i in range(len(some_list)-1):
+        if min(some_list[i+1:]) < some_list[i]:
+            index = some_list.index(min(some_list[i+1:]))
+            tmp = some_list[i]
+            some_list[i] = some_list[index]
+            some_list[index] = tmp
+
+    return some_list
+
+
+def bubble_sort(some_list):
     for i in range(len(some_list)):
         min = some_list[i]
         swap = i
@@ -40,6 +51,8 @@ def selection_sort(some_list):
 
     return some_list
 
+
+print(bubble_sort([6, 2, 7, 3, 1, 2]))
 
 print(selection_sort([6, 2, 7, 3, 1, 2]))
 
