@@ -28,7 +28,7 @@ def binary_search(element, some_list):
 def selection_sort(some_list):
     for i in range(len(some_list)-1):
         if min(some_list[i+1:]) < some_list[i]:
-            index = some_list.index(min(some_list[i+1:]))
+            index = some_list[i+1:].index(min(some_list[i+1:]))+i+1
             tmp = some_list[i]
             some_list[i] = some_list[index]
             some_list[index] = tmp
