@@ -32,7 +32,6 @@ def selection_sort(some_list):
             tmp = some_list[i]
             some_list[i] = some_list[index]
             some_list[index] = tmp
-
     return some_list
 
 
