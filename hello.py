@@ -12,6 +12,7 @@ def linear_search(element, some_list):
     # 코드를 작성하세요.
 
 
+# 이진 탐색 1
 def binary_search(element, some_list):
     mid = int(len(some_list) / 2) - 1 + (len(some_list) % 2)
     while 1:
@@ -25,10 +26,25 @@ def binary_search(element, some_list):
             return None
 
 
+# 이진 탐색 2
+def binary_search2(element, some_list):
+    start = 0
+    end = len(some_list)-1
+    while start <= end:
+        mid = int((start + end) / 2)
+        if some_list[mid] == element:
+            return mid
+        elif some_list[mid] > element:
+            end = mid - 1
+        else:
+            start = mid + 1
+    return None
+
+
 def selection_sort(some_list):
-    for i in range(len(some_list)-1):
-        if min(some_list[i+1:]) < some_list[i]:
-            index = some_list[i+1:].index(min(some_list[i+1:]))+i+1
+    for i in range(len(some_list) - 1):
+        if min(some_list[i + 1:]) < some_list[i]:
+            index = some_list[i + 1:].index(min(some_list[i + 1:])) + i + 1
             tmp = some_list[i]
             some_list[i] = some_list[index]
             some_list[index] = tmp
@@ -39,7 +55,7 @@ def selection_sort_2(some_list):
     for i in range(len(some_list)):
         min = some_list[i]
         swap = i
-        for j in range(i+1, len(some_list)):
+        for j in range(i + 1, len(some_list)):
             if some_list[j] < min:
                 min = some_list[j]
                 swap = j
@@ -55,7 +71,7 @@ print(selection_sort([6, 2, 7, 3, 1, 2]))
 
 print(selection_sort_2([6, 2, 7, 3, 1, 2]))
 
-print(binary_search(11, [2, 3, 5, 7, 11]))
+print(binary_search2(11, [2, 3, 5, 7, 11]))
 
 print(linear_search(11, [2, 3, 5, 7, 11]))
 
