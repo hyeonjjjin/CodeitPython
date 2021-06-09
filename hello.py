@@ -51,13 +51,13 @@ def selection_sort(some_list):
     return some_list
 
 
-def selection_sort_2(some_list):
+def selection_sort2(some_list):
     for i in range(len(some_list)):
-        min = some_list[i]
+        minimum = some_list[i]
         swap = i
         for j in range(i + 1, len(some_list)):
-            if some_list[j] < min:
-                min = some_list[j]
+            if some_list[j] < minimum:
+                minimum = some_list[j]
                 swap = j
         if swap != i:
             tmp = some_list[i]
@@ -69,7 +69,7 @@ def selection_sort_2(some_list):
 
 print(selection_sort([6, 2, 7, 3, 1, 2]))
 
-print(selection_sort_2([6, 2, 7, 3, 1, 2]))
+print(selection_sort2([6, 2, 7, 3, 1, 2]))
 
 print(binary_search2(11, [2, 3, 5, 7, 11]))
 
