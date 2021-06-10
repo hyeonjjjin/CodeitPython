@@ -29,7 +29,7 @@ def binary_search(element, some_list):
 # 이진 탐색 2
 def binary_search2(element, some_list):
     start = 0
-    end = len(some_list)-1
+    end = len(some_list) - 1
     while start <= end:
         mid = int((start + end) / 2)
         if some_list[mid] == element:
@@ -71,15 +71,25 @@ def selection_sort2(some_list):
 def countdown(n):
     if n > 0:
         print(n)
-        countdown(n-1)
+        countdown(n - 1)
 
 
 def factorial(n):
     if n > 1:
-        return n * factorial(n-1)
+        return n * factorial(n - 1)
     else:
         return 1
 
+
+# O(2^n)
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fib(n - 2) + fib(n - 1)
+
+
+print(fib(7))
 
 print(factorial(5))
 
