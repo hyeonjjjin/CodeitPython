@@ -67,6 +67,15 @@ def selection_sort2(some_list):
     return some_list
 
 
+# Recursive 재귀
+def countdown(n):
+    if n > 0:
+        print(n)
+        countdown(n-1)
+
+
+countdown(4)
+
 print(selection_sort([6, 2, 7, 3, 1, 2]))
 
 print(selection_sort2([6, 2, 7, 3, 1, 2]))
