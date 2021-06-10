@@ -74,6 +74,15 @@ def countdown(n):
         countdown(n-1)
 
 
+def factorial(n):
+    if n > 1:
+        return n * factorial(n-1)
+    else:
+        return 1
+
+
+print(factorial(5))
+
 countdown(4)
 
 print(selection_sort([6, 2, 7, 3, 1, 2]))
