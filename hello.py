@@ -105,7 +105,7 @@ def sum_digits(n):
 
 def flip(some_list):
     if len(some_list) > 1:
-        return [some_list[len(some_list)-1]]+flip(some_list[:len(some_list)-1])
+        return some_list[-1:]+flip(some_list[:-1])
     else:
         return [some_list[0]]
 
