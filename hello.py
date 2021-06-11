@@ -89,6 +89,24 @@ def fib(n):
         return fib(n - 2) + fib(n - 1)
 
 
+def triangle_number(n):
+    if n == 1:
+        return 1
+    else:
+        return n + triangle_number(n-1)
+
+
+def sum_digits(n):
+    if len(str(n)) == 1:
+        return n
+    else:
+        return int(n / (10 ** (len(str(n)) - 1))) + sum_digits(n % (10 ** (len(str(n)) - 1)))
+
+
+print(sum_digits(5342))
+
+print(triangle_number(3))
+
 print(fib(7))
 
 print(factorial(5))
