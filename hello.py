@@ -103,6 +103,15 @@ def sum_digits(n):
         return int(n / (10 ** (len(str(n)) - 1))) + sum_digits(n % (10 ** (len(str(n)) - 1)))
 
 
+def flip(some_list):
+    if len(some_list) > 1:
+        return [some_list[len(some_list)-1]]+flip(some_list[:len(some_list)-1])
+    else:
+        return [some_list[0]]
+
+
+print(flip([1, 2, 3, 4, 5]))
+
 print(sum_digits(5342))
 
 print(triangle_number(3))
