@@ -114,13 +114,13 @@ def flip(some_list):
 def binary_search_recursion(element, some_list, start_index=0, end_index=None):
     if end_index is None:
         end_index = len(some_list) - 1
-    mid_index = int((start_index + end_index) / 2)
-    if end_index >= 0 and element == some_list[mid_index]:
-        return mid_index
-    elif start_index == end_index or end_index <= 0:
+    if start_index > end_index:
         return None
+    mid_index = (start_index + end_index) // 2
+    if element == some_list[mid_index]:
+        return mid_index
     else:
-        if element > some_list[mid_index]:
+        if element > some_list[mid_index]:# list는 그대로 주고 start, end index를 지정해주는 방법도 있다
             return mid_index+1+binary_search_recursion(element, some_list[mid_index+1:])
         else:
             return binary_search_recursion(element, some_list[:mid_index])
