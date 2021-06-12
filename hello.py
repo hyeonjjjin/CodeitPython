@@ -7,7 +7,8 @@ def is_palindrome(word):
 
 def linear_search(element, some_list):
     for i in range(len(some_list)):
-        if element == some_list[i]: return i
+        if element == some_list[i]:
+            return i
     return None
     # 코드를 작성하세요.
 
@@ -93,7 +94,7 @@ def triangle_number(n):
     if n == 1:
         return 1
     else:
-        return n + triangle_number(n-1)
+        return n + triangle_number(n - 1)
 
 
 def sum_digits(n):
@@ -105,10 +106,31 @@ def sum_digits(n):
 
 def flip(some_list):
     if len(some_list) > 1:
-        return some_list[-1:]+flip(some_list[:-1])
+        return some_list[-1:] + flip(some_list[:-1])
     else:
         return [some_list[0]]
 
+
+def binary_search_recursion(element, some_list, start_index=0, end_index=None):
+    if end_index == None:
+        end_index = len(some_list) - 1
+    mid_index = int((start_index + end_index) / 2)
+    if element == some_list[mid_index]:
+        return mid_index
+    elif start_index == end_index:
+        return None
+    else:
+        if element > some_list[mid_index]:
+            binary_search(element, some_list[mid_index:])
+        else:
+            binary_search(element, some_list[:mid_index])
+
+
+print(binary_search_recursion(2, [2, 3, 5, 7, 11]))
+print(binary_search_recursion(0, [2, 3, 5, 7, 11]))
+print(binary_search_recursion(5, [2, 3, 5, 7, 11]))
+print(binary_search_recursion(3, [2, 3, 5, 7, 11]))
+print(binary_search_recursion(11, [2, 3, 5, 7, 11]))
 
 print(flip([1, 2, 3, 4, 5]))
 
