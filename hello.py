@@ -115,20 +115,18 @@ def binary_search_recursion(element, some_list, start_index=0, end_index=None):
     if end_index == None:
         end_index = len(some_list) - 1
     mid_index = int((start_index + end_index) / 2)
-    if element == some_list[mid_index]:
+    if end_index >= 0 and element == some_list[mid_index]:
         return mid_index
-    elif start_index == end_index:
+    elif start_index == end_index or end_index <= 0:
         return None
     else:
         if element > some_list[mid_index]:
-            binary_search(element, some_list[mid_index:])
+            return binary_search_recursion(element, some_list[mid_index+1:])
         else:
-            binary_search(element, some_list[:mid_index])
+            return binary_search_recursion(element, some_list[:mid_index])
 
 
-print(binary_search_recursion(2, [2, 3, 5, 7, 11]))
-print(binary_search_recursion(0, [2, 3, 5, 7, 11]))
-print(binary_search_recursion(5, [2, 3, 5, 7, 11]))
+
 print(binary_search_recursion(3, [2, 3, 5, 7, 11]))
 print(binary_search_recursion(11, [2, 3, 5, 7, 11]))
 
