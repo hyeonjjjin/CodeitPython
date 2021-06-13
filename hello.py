@@ -120,12 +120,21 @@ def binary_search_recursion(element, some_list, start_index=0, end_index=None):
     if element == some_list[mid_index]:
         return mid_index
     else:
-        if element > some_list[mid_index]:# list는 그대로 주고 start, end index를 지정해주는 방법도 있다
-            return mid_index+1+binary_search_recursion(element, some_list[mid_index+1:])
+        if element > some_list[mid_index]:  # list 그대로 주고 start, end index 지정해주는 방법도 있다
+            return mid_index + 1 + binary_search_recursion(element, some_list[mid_index + 1:])
         else:
             return binary_search_recursion(element, some_list[:mid_index])
 
 
+def move_disk(disk_num, start_peg, end_peg):
+    print("%d번 원판을 %d번 기둥에서 %d번 기둥으로 이동" % (disk_num, start_peg, end_peg))
+
+
+def hanoi(num_disks, start_peg, end_peg):
+    print()
+
+
+hanoi(3, 1, 3)
 print(binary_search_recursion(3, [2, 3, 5, 7, 11]))
 print(binary_search_recursion(11, [2, 3, 5, 7, 11]))
 
