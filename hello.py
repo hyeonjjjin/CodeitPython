@@ -131,7 +131,15 @@ def move_disk(disk_num, start_peg, end_peg):
 
 
 def hanoi(num_disks, start_peg, end_peg):
-    print()
+    if start_peg+end_peg == 4: oth_peg = 2
+    elif start_peg+end_peg == 3: oth_peg = 3
+    else: oth_peg = 1
+    if num_disks == 1:
+        move_disk(num_disks, start_peg, end_peg)
+    else:
+        hanoi(num_disks-1, start_peg, oth_peg)
+        move_disk(num_disks, start_peg, end_peg)
+        hanoi(num_disks-1, oth_peg, end_peg)
 
 
 hanoi(3, 1, 3)
