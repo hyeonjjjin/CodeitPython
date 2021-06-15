@@ -1,3 +1,21 @@
+from math import sqrt
+
+def distance(store1, store2):
+    return sqrt((store1[0] - store2[0]) ** 2 + (store1[1] - store2[1]) ** 2)
+
+def closest_pair(coordinates):
+    answer = [coordinates[0], coordinates[1]]
+    min_distance = distance(coordinates[0], coordinates[1])
+    for i in range(len(coordinates)):
+        for j in range(i+1, len(coordinates)):
+            if min_distance >= distance(coordinates[i], coordinates[j]):
+                min_distance = min(min_distance, distance(coordinates[i], coordinates[j]))
+                answer = [coordinates[i], coordinates[j]]
+    return answer
+
+test_coordinates = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]
+print(closest_pair(test_coordinates))
+
 def is_palindrome(word):
     for i in range(int(len(word) / 2)):
         if word[i] != word[len(word) - i - 1]:
