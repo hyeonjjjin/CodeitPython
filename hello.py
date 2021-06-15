@@ -126,6 +126,7 @@ def binary_search_recursion(element, some_list, start_index=0, end_index=None):
             return binary_search_recursion(element, some_list[:mid_index])
 
 
+# hanoi 2^n
 def move_disk(disk_num, start_peg, end_peg):
     print("%d번 원판을 %d번 기둥에서 %d번 기둥으로 이동" % (disk_num, start_peg, end_peg))
 
@@ -135,10 +136,23 @@ def hanoi(num_disks, start_peg, end_peg):
     if num_disks == 0:
         return
     else:
-        hanoi(num_disks-1, start_peg, oth_peg)
+        hanoi(num_disks - 1, start_peg, oth_peg)
         move_disk(num_disks, start_peg, end_peg)
-        hanoi(num_disks-1, oth_peg, end_peg)
+        hanoi(num_disks - 1, oth_peg, end_peg)
 
+
+# Brute Force Attack
+def max_product(left_cards, right_cards):
+    all_mul = []
+    for left in range(len(left_cards)):
+        for right in range(len(right_cards)):
+            all_mul.append(left_cards[left]*right_cards[right])
+    return max(all_mul)
+
+
+print(max_product([1, 6, 5], [4, 2, 3]))
+print(max_product([1, -9, 3, 4], [2, 8, 3, 1]))
+print(max_product([-1, -7, 3], [-4, 3, 6]))
 
 hanoi(3, 1, 3)
 print(binary_search_recursion(3, [2, 3, 5, 7, 11]))
