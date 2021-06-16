@@ -14,9 +14,6 @@ def closest_pair(coordinates):
     return answer
 
 
-test_coordinates = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]
-print(closest_pair(test_coordinates))
-
 def is_palindrome(word):
     for i in range(int(len(word) / 2)):
         if word[i] != word[len(word) - i - 1]:
@@ -177,9 +174,17 @@ def max_product_feedback(left_cards, right_cards):
     return product
 
 
+def trapping_rain(buildings):
+
+
+
+print(trapping_rain([3, 0, 0, 2, 0, 4]))
+print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
+
+test_coordinates = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]
+print(closest_pair(test_coordinates))
+
 print(max_product([1, 6, 5], [4, 2, 3]))
-print(max_product([1, -9, 3, 4], [2, 8, 3, 1]))
-print(max_product([-1, -7, 3], [-4, 3, 6]))
 
 hanoi(3, 1, 3)
 print(binary_search_recursion(3, [2, 3, 5, 7, 11]))
