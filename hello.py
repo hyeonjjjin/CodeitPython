@@ -1,3 +1,5 @@
+# 알고리즘 패러다임
+
 from math import sqrt
 
 
@@ -203,6 +205,17 @@ def trapping_rain_feedback(buildings):
 
     return total_height
 
+
+def consecutive_sum(start, end):
+    if end-start <= 1:
+        return start+end
+    return consecutive_sum(start, end//2)+consecutive_sum(end//2+1, end)
+
+
+print(consecutive_sum(1, 10))
+print(consecutive_sum(1, 100))
+print(consecutive_sum(1, 253))
+print(consecutive_sum(1, 388))
 
 print("trapping rain")
 print(trapping_rain([3, 0, 0, 2, 0, 4]))
