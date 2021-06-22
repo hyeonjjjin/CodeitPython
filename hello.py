@@ -8,7 +8,7 @@ def distance(store1, store2):
 def closest_pair(coordinates):
     answer = [coordinates[0], coordinates[1]]
     for i in range(len(coordinates)):
-        for j in range(i+1, len(coordinates)):
+        for j in range(i + 1, len(coordinates)):
             if distance(answer[0], answer[1]) >= distance(coordinates[i], coordinates[j]):
                 answer = [coordinates[i], coordinates[j]]
     return answer
@@ -162,7 +162,7 @@ def max_product(left_cards, right_cards):
     all_mul = []
     for left in range(len(left_cards)):
         for right in range(len(right_cards)):
-            all_mul.append(left_cards[left]*right_cards[right])
+            all_mul.append(left_cards[left] * right_cards[right])
     return max(all_mul)
 
 
@@ -175,8 +175,21 @@ def max_product_feedback(left_cards, right_cards):
 
 
 def trapping_rain(buildings):
+    answer = 0
+    maxHigh = max(buildings)
+    leftMax = {}
+    rightMax = {}
+    for i in range(1, len(buildings) - 1):
+        leftMax[i] = max(buildings[:i])
+        rightMax[i] = max(buildings[i + 1:])
+    for x in range(1, len(buildings) - 1):
+        for y in range(buildings[x], maxHigh + 1):
+            if leftMax[x] > y and rightMax[x] > y:
+                answer += 1
+    return answer
 
 
+print("trapping rain")
 print(trapping_rain([3, 0, 0, 2, 0, 4]))
 print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
 
