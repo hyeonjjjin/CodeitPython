@@ -207,9 +207,9 @@ def trapping_rain_feedback(buildings):
 
 
 def consecutive_sum(start, end):
-    if end-start <= 1:
-        return start+end
-    return consecutive_sum(start, end//2)+consecutive_sum(end//2+1, end)
+    if end == start:
+        return start
+    return consecutive_sum(start, (start+end)//2)+consecutive_sum((start+end)//2+1, end)
 
 
 print(consecutive_sum(1, 10))
