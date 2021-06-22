@@ -250,7 +250,16 @@ def merge_feedback(list1, list2):
 
 
 def merge_sort(my_list):
-    return merge(sorted(my_list[:len(my_list)//2]), sorted(my_list[len(my_list)//2:]))
+    if len(my_list) < 2:
+        return my_list
+    else:
+        return merge(merge_sort(my_list[:len(my_list)//2]), merge_sort(my_list[len(my_list)//2:]))
+    # 받은 리스트를 쪼개야 정렬할 수 있어
+    # 근데 쪼개진 리스트도 정렬되어있지 않으니 쪼개야 정렬할 수 있어
+    # 최종적으로 길이가 0-1인 리스트로 쪼개야 merge 함수를 통해 정렬된 리스트로 합칠 수 있어
+    # 길이가 0-1인 리스트로 쪼개진 경우 merge 함수에 보내서 합쳐
+    # 합쳐진 리스트는 정렬된 상태일 테니 그대로 다시 merge 함수에 대입될 수 있어
+    # 상호반복.. 을 통해 정렬 되는거다!
 
 
 print(merge_sort([1, 3, 5, 7, 9, 11, 13, 11]))
