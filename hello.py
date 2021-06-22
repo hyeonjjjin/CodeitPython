@@ -189,6 +189,21 @@ def trapping_rain(buildings):
     return answer
 
 
+def trapping_rain_feedback(buildings):
+    total_height = 0
+    for i in range(1, len(buildings) - 1):
+        max_left = max(buildings[:i])
+        max_right = max(buildings[i:])
+        # 현재 인덱스에 담길 수 있는 최대 높이
+        upper_bound = min(max_left, max_right)
+
+        # 현재 건물 높이가 더 높다면 물이 담길 수 없음
+        # 건물 높이가 담길 수 있는 최대 높이보다 높을 수 있기 때문에 max 함수 사용. 담길 수 있다해도 내 높이 빼야함
+        total_height += max(0, upper_bound - buildings[i])
+
+    return total_height
+
+
 print("trapping rain")
 print(trapping_rain([3, 0, 0, 2, 0, 4]))
 print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
