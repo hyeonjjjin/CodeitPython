@@ -212,10 +212,19 @@ def consecutive_sum(start, end):
     return consecutive_sum(start, (start+end)//2)+consecutive_sum((start+end)//2+1, end)
 
 
+# 정렬된 두 리스트를 받아 하나의 정렬된 리스트로 리턴
+def merge(list1, list2):
+
+
+
+# 테스트
+print(merge([1], []))
+print(merge([], [1]))
+print(merge([2], [1]))
+print(merge([1, 2, 3, 4], [5, 6, 7, 8]))
+print(merge([5, 6, 7, 8], [1, 2, 3, 4]))
+print(merge([4, 7, 8, 9], [1, 3, 6, 10]))
 print(consecutive_sum(1, 10))
-print(consecutive_sum(1, 100))
-print(consecutive_sum(1, 253))
-print(consecutive_sum(1, 388))
 
 print("trapping rain")
 print(trapping_rain([3, 0, 0, 2, 0, 4]))
