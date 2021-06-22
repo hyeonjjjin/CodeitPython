@@ -231,6 +231,28 @@ def merge(list1, list2):
     return answer
 
 
+# 두 리스트 중 하나만 비어도 반복문을 나오게 하고 나머지를 한번에 넣어줌
+def merge_feedback(list1, list2):
+    i = 0
+    j = 0
+    merged_list = []
+    while i < len(list1) and j < len(list2):
+        if list1[i] > list2[j]:
+            merged_list.append(list2[j])
+            j += 1
+        else:
+            merged_list.append(list1[i])
+            i += 1
+
+    if i == len(list1):
+        merged_list += list2[j:]
+
+    elif j == len(list2):
+        merged_list += list1[i:]
+
+    return merged_list
+
+
 # 테스트
 print(merge([1], []))
 print(merge([], [1]))
