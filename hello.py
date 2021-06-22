@@ -214,7 +214,21 @@ def consecutive_sum(start, end):
 
 # 정렬된 두 리스트를 받아 하나의 정렬된 리스트로 리턴
 def merge(list1, list2):
-
+    answer = []
+    while len(list1) > 0 or len(list2) > 0:
+        if len(list1) == 0:
+            answer.append(list2[0])
+            del list2[0]
+        elif len(list2) == 0:
+            answer.append(list1[0])
+            del list1[0]
+        elif list1[0] < list2[0]:
+            answer.append(list1[0])
+            del list1[0]
+        else:
+            answer.append(list2[0])
+            del list2[0]
+    return answer
 
 
 # 테스트
