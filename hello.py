@@ -244,11 +244,7 @@ def merge_feedback(list1, list2):
             merged_list.append(list1[i])
             i += 1
 
-    if i == len(list1):
-        merged_list += list2[j:]
-
-    elif j == len(list2):
-        merged_list += list1[i:]
+    merged_list = merged_list + list1[i:] + list2[j:]
 
     return merged_list
 
