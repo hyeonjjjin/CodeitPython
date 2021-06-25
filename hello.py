@@ -273,14 +273,13 @@ def swap_elements(my_list, index1, index2):
 def partition(my_list, start, end):
     b = i = start
     while i < end:
-        if my_list[i] > my_list[end]:
-            i += 1
-        else:
+        if my_list[i] <= my_list[end]:
             swap_elements(my_list, i, b)
             b += 1
-            i += 1
+        i += 1
     swap_elements(my_list, b, end)
-    return b
+    end = b
+    return end
 
 
 # 테스트 1
