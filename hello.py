@@ -292,16 +292,16 @@ def quicksort(my_list, start, end):
         quicksort(my_list, newpivot+1, end)
 
 
-def quicksort2(my_list):
-    if len(my_list) < 1:
-        return my_list
-    newpivot = partition(my_list, 0, len(my_list)-1)
-    if newpivot < 1 or len(my_list)-newpivot < 1:
-        return my_list
+# 옵셔널 파라미터(Optional Parameter) 사용!
+def quicksort2(my_list, start=0, end=None):
+    if end is None:
+        end = len(my_list)-1
+    if end - start < 0:
+        return
     else:
-        my_list[:newpivot] = quicksort2(my_list[:newpivot])
-        my_list[newpivot+1:] = quicksort2(my_list[newpivot+1:])
-
+        newpivot = partition(my_list, start, end)
+        quicksort(my_list, start, newpivot - 1)
+        quicksort(my_list, newpivot + 1, end)
 
 # 테스트 2
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
