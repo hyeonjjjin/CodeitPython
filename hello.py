@@ -303,6 +303,7 @@ def quicksort2(my_list, start=0, end=None):
         quicksort(my_list, start, newpivot - 1)
         quicksort(my_list, newpivot + 1, end)
 
+
 # 테스트 2
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
 quicksort2(list2) # start, end 파라미터 없이 호출
