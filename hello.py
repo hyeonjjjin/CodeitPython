@@ -306,11 +306,13 @@ def quicksort2(my_list, start=0, end=None):
 
 def fib_memo(n, cache):
 
+
 def fib(n):
     # n번째 피보나치 수를 담는 사전
     fib_cache = {}
 
     return fib_memo(n, fib_cache)
+
 
 # 테스트 2
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
