@@ -314,16 +314,10 @@ def fib(n):
     return fib_memo(n, fib_cache)
 
 
-# 테스트 2
+
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
 quicksort2(list2) # start, end 파라미터 없이 호출
 print(list2)
-
-# 테스트 3
-list3 = [2, 5, 6, 7, 1, 2, 4, 7, 10, 11, 4, 15, 13, 1, 6, 4]
-quicksort2(list3) # start, end 파라미터 없이 호출
-print(list3)
-
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
 quicksort(list2, 0, len(list2) - 1)
 print(list2)
