@@ -314,7 +314,6 @@ def fib(n):
     return fib_memo(n, fib_cache)
 
 
-
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
 quicksort2(list2) # start, end 파라미터 없이 호출
 print(list2)
