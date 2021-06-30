@@ -327,11 +327,24 @@ def fib_tab(n):
     return fib_table[n]
 
 
+def fib_optimized(n):
+    if n < 3:
+        return 1
+    current = 1
+    previous = 1
+    for i in range(3, n + 1):
+        current, previous = current+previous, current
+    return current
+
+
 # 테스트
-fib_table = {}
+print(fib_optimized(16))
+print(fib_optimized(53))
+print(fib_optimized(213))
+
+# 테스트
 print(fib_tab(10))
-print(fib_tab(56))
-print(fib_tab(132))
+
 
 print(fib(10))
 
