@@ -320,9 +320,20 @@ def fib(n):
     return fib_memo(n, fib_cache)
 
 
+def fib_tab(n):
+    fib_table = [0, 1, 1]
+    for i in range(3, n + 1):
+        fib_table.append(fib_table[i - 1] + fib_table[i - 2])
+    return fib_table[n]
+
+
+# 테스트
+fib_table = {}
+print(fib_tab(10))
+print(fib_tab(56))
+print(fib_tab(132))
+
 print(fib(10))
-print(fib(50))
-print(fib(100))
 
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
 quicksort2(list2) # start, end 파라미터 없이 호출
