@@ -328,11 +328,9 @@ def fib_tab(n):
 
 
 def fib_optimized(n):
-    if n < 3:
-        return 1
     current = 1
-    previous = 1
-    for i in range(3, n + 1):
+    previous = 0
+    for i in range(2, n + 1):
         current, previous = current+previous, current
     return current
 
