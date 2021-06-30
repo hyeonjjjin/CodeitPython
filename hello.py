@@ -305,14 +305,24 @@ def quicksort2(my_list, start=0, end=None):
 
 
 def fib_memo(n, cache):
+    if n < 3:
+        return 1
+    elif cache[n] != -1:
+        return cache[n]
+    else:
+        cache[n] = fib_memo(n-1, cache) + fib_memo(n-2, cache)
+        return cache[n]
 
 
 def fib(n):
     # n번째 피보나치 수를 담는 사전
-    fib_cache = {}
-
+    fib_cache = [-1] * (n + 1)
     return fib_memo(n, fib_cache)
 
+
+print(fib(10))
+print(fib(50))
+print(fib(100))
 
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
 quicksort2(list2) # start, end 파라미터 없이 호출
