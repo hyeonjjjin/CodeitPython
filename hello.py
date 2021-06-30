@@ -307,7 +307,7 @@ def quicksort2(my_list, start=0, end=None):
 def fib_memo(n, cache):
     if n < 3:
         return 1
-    elif cache[n] != -1:
+    elif n in cache:
         return cache[n]
     else:
         cache[n] = fib_memo(n-1, cache) + fib_memo(n-2, cache)
@@ -316,7 +316,7 @@ def fib_memo(n, cache):
 
 def fib(n):
     # n번째 피보나치 수를 담는 사전
-    fib_cache = [-1] * (n + 1)
+    fib_cache = {}
     return fib_memo(n, fib_cache)
 
 
