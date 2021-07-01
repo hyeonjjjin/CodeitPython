@@ -343,7 +343,6 @@ print(fib_optimized(213))
 # 테스트
 print(fib_tab(10))
 
-
 print(fib(10))
 
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
