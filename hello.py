@@ -342,14 +342,11 @@ def max_profit_memo(price_list, count, cache):
         return cache[count]
     else:
         a, b, maxProfit = 1, count-1, 0
-        if b+1 <= len(price_list)-1:
-            maxProfit = price_list[b+1]
-        while a <= b:
-            temp = max_profit_memo(price_list, a, cache) + max_profit_memo(price_list, b, cache)
-            if temp > maxProfit:
-                maxProfit = temp
-            a += 1
-            b -= 1
+        if count < len(price_list):
+            maxProfit = price_list[count]
+        for i in range(1, count//2+1):
+            maxProfit = max(maxProfit, max_profit_memo(price_list, i, cache) + max_profit_memo(price_list, count-i, cache))
+
         cache[count] = maxProfit
         return cache[count]
 
