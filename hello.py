@@ -346,22 +346,34 @@ def max_profit_memo(price_list, count, cache):
             maxProfit = price_list[count]
         for i in range(1, count//2+1):
             maxProfit = max(maxProfit, max_profit_memo(price_list, i, cache) + max_profit_memo(price_list, count-i, cache))
-
         cache[count] = maxProfit
         return cache[count]
 
 
-def max_profit(price_list, count):
+def max_profit_memoization(price_list, count):
     max_profit_cache = {}
 
     return max_profit_memo(price_list, count, max_profit_cache)
 
 
-# 테스트
-print(max_profit([0, 100, 400, 800, 900, 1000], 5))
-print(max_profit([0, 100, 400, 800, 900, 1000], 10))
-print(max_profit([0, 100, 400, 800, 900, 1000, 1400, 1600, 2100, 2200], 9))
+def max_profit_tabulation(price_list, count):
+    max_profit_table = [price_list[0], price_list[1]]
+    for i in range(2, count + 1):
+        maxProfit = 0
+        if i < len(price_list):
+            maxProfit = price_list[i]
+        for j in range(1, i // 2 + 1):
+            maxProfit = max(maxProfit, max_profit_table[j] + max_profit_table[i-j])
+        max_profit_table.append(maxProfit)
+    return max_profit_table[count]
 
+
+# 테스트
+print(max_profit_tabulation([0, 200, 600, 900, 1200, 2000], 5))
+print(max_profit_tabulation([0, 300, 600, 700, 1100, 1400], 8))
+print(max_profit_tabulation([0, 100, 200, 400, 600, 900, 1200, 1300, 1500, 1800], 9))
+
+print(max_profit_memoization([0, 100, 400, 800, 900, 1000], 5))
 print(fib_optimized(16))
 print(fib_tab(10))
 print(fib(10))
