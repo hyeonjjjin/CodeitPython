@@ -20,7 +20,17 @@ def min_fee(pages_to_print):
     if len(pages_to_print) == 1:
         return pages_to_print[0]
     return sorted(pages_to_print)[0] * len(pages_to_print) + min_fee(sorted(pages_to_print)[1:])
+    '''
+    sorted_list = sorted(pages_to_print)
+    # 총 벌금을 담을 변수
+    total_fee = 0
 
+    # 정렬된 리스트에서 총 벌금 계산
+    for i in range(len(sorted_list)):
+        total_fee += sorted_list[i] * (len(sorted_list) - i)
+
+    return total_fee
+    '''
 
 # 테스트
 print(min_fee([6, 11, 4, 1]))
