@@ -1,3 +1,4 @@
+# Divide and Conquer
 def consecutive_sum(start, end):
     if end == start:
         return start
