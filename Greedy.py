@@ -10,9 +10,9 @@ def min_coin_count(value, coin_list):
 
 
 def max_product(card_lists):
-    answer = max(card_lists[0])
-    for i in range(1, len(card_lists)):
-        answer *= max(card_lists[i])
+    answer = 1
+    for card_list in card_lists:
+        answer *= max(card_list)
     return answer
 
 
