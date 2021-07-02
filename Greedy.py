@@ -16,6 +16,19 @@ def max_product(card_lists):
     return answer
 
 
+def min_fee(pages_to_print):
+    if len(pages_to_print) == 1:
+        return pages_to_print[0]
+    return sorted(pages_to_print)[0] * len(pages_to_print) + min_fee(sorted(pages_to_print)[1:])
+
+
+# 테스트
+print(min_fee([6, 11, 4, 1]))
+print(min_fee([3, 2, 1]))
+print(min_fee([3, 1, 4, 3, 2]))
+print(min_fee([8, 4, 2, 3, 9, 23, 6, 8]))
+
+
 # 테스트
 test_cards1 = [[1, 6, 5], [4, 2, 3]]
 print(max_product(test_cards1))
