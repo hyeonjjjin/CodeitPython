@@ -2,12 +2,10 @@
 def min_coin_count(value, coin_list):
     count, i = 0, 0
     coin_list.sort(reverse=True)
-    while value > 0 and i < len(coin_list):
-        if value >= coin_list[i]:
-            value -= coin_list[i]
-            count += 1
-        else:
-            i += 1
+    for coin in sorted(coin_list, reverse=True):
+        count += (value // coin)
+        value %= coin
+
     return count
 
 
