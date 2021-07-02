@@ -335,14 +335,38 @@ def fib_optimized(n):
     return current
 
 
+def max_profit_memo(price_list, count, cache):
+    if count == 1:
+        return price_list[count]
+    elif count in cache:
+        return cache[count]
+    else:
+        a, b, maxProfit = 1, count-1, 0
+        if b+1 <= len(price_list)-1:
+            maxProfit = price_list[b+1]
+        while a <= b:
+            temp = max_profit_memo(price_list, a, cache) + max_profit_memo(price_list, b, cache)
+            if temp > maxProfit:
+                maxProfit = temp
+            a += 1
+            b -= 1
+        cache[count] = maxProfit
+        return cache[count]
+
+
+def max_profit(price_list, count):
+    max_profit_cache = {}
+
+    return max_profit_memo(price_list, count, max_profit_cache)
+
+
 # 테스트
+print(max_profit([0, 100, 400, 800, 900, 1000], 5))
+print(max_profit([0, 100, 400, 800, 900, 1000], 10))
+print(max_profit([0, 100, 400, 800, 900, 1000, 1400, 1600, 2100, 2200], 9))
+
 print(fib_optimized(16))
-print(fib_optimized(53))
-print(fib_optimized(213))
-
-# 테스트
 print(fib_tab(10))
-
 print(fib(10))
 
 list2 = [28, 13, 9, 30, 1, 48, 5, 7, 15]
