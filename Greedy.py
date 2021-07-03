@@ -35,7 +35,7 @@ def min_fee(pages_to_print):
 
 # 가장 먼저 끝나는 강의를 찾는 Greedy를 이용하면 최적의 답을 찾을 수 있다.
 def course_selection(course_list):
-    answer ={course_list[0]}
+    answer = {course_list[0]}
     index, end, min = 0, 0, course_list[0][1]
     for i in range(1, len(course_list)):
         if course_list[i][0] > end and course_list[i][1] < min:
