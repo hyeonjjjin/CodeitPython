@@ -43,6 +43,7 @@ def course_selection(course_list):
             index = i
     end = course_list[index][0]
     answer.append(course_list[index])
+    return answer
 
 
 # 테스트
