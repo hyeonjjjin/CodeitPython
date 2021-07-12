@@ -149,12 +149,13 @@ print(binary_search_recursion(11, [2, 3, 5, 7, 11]))
 print(flip([1, 2, 3, 4, 5]))
 print(sum_digits(5342))
 print(triangle_number(3))
+
 print(fib(7))
 print(factorial(5))
 
 countdown(4)
 print(selection_sort([6, 2, 7, 3, 1, 2]))
-print(selection_sort2([6, 2, 7, 3, 1, 2]))
+print(selection_sort2([5, 2, 7, 3, 1, 2]))
 print(binary_search2(11, [2, 3, 5, 7, 11]))
 print(linear_search(11, [2, 3, 5, 7, 11]))
 
