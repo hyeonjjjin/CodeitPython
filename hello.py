@@ -156,7 +156,7 @@ print(factorial(5))
 countdown(4)
 print(selection_sort([6, 2, 7, 3, 1, 2]))
 print(selection_sort2([5, 2, 7, 3, 1, 2]))
-print(binary_search2(11, [2, 3, 5, 7, 11]))
+print(binary_search2(11, [1, 3, 5, 7, 11]))
 print(linear_search(11, [2, 3, 5, 7, 11]))
 
 print(is_palindrome("hello"))
